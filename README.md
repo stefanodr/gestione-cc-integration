@@ -100,6 +100,28 @@ Il flusso verifica che l'URL sia HTTPS e locale, che il certificato sia leggibil
 
 ## Entità create
 
+### Blueprint: notifiche Google Drive
+
+È disponibile un blueprint per ricevere notifiche sullo smartphone quando:
+
+- Google Drive si scollega o perde l'autorizzazione;
+- il backup notturno non riesce;
+- il backup notturno non risulta completato entro l'orario previsto.
+
+[![Importa il blueprint Gestione C/C - Notifiche Google Drive](https://my.home-assistant.io/badges/blueprint.svg)](https://my.home-assistant.io/redirect/blueprint/?blueprint_url=https%3A%2F%2Fgithub.com%2Fstefanodr%2Fgestione-cc-integration%2Fblob%2Fmain%2Fblueprints%2Fautomation%2Fgestione_cc%2Fnotifiche_google_drive.yaml)
+
+**Configurazione**
+
+1. Premere il pulsante **Importa il blueprint** qui sopra e confermare l'importazione in Home Assistant.
+2. Aprire **Impostazioni → Automazioni e scene → Blueprint**, selezionare **Gestione C/C - Notifiche Google Drive** e creare una nuova automazione.
+3. Selezionare i tre sensori binari dell'integrazione: Google Drive collegato, backup notturno non riuscito e backup notturno mancante.
+4. Selezionare lo smartphone su cui è installata l'app Home Assistant Companion e salvare.
+
+I sensori vengono scelti dall'interfaccia: non è necessario che i loro entity ID coincidano con quelli suggeriti dall'integrazione. Per esempio, Home Assistant può aver assegnato nomi personalizzati con prefisso `space_`.
+
+La notifica di backup non riuscito viene inviata solo se, al momento dell'evento, il sensore Google Drive risulta ancora attivo. Le notifiche usano tag distinti per aggiornare la notifica dello stesso tipo invece di accumulare duplicati.
+
+
 Le entità sono associate a un unico dispositivo **Gestione C/C**. Gli ID suggeriti sono:
 
 ### Sensori
@@ -258,6 +280,28 @@ The configuration flow checks that the URL is local and uses HTTPS, that the cer
 **Important:** do not click **Revoke token** first. **Generate / renew token** creates a new token and automatically invalidates the previous one. If the token is lost or was not copied, click **Generate / renew token** again and copy the newly displayed value; the previous token cannot be recovered. Never share the token or include it in issue reports, screenshots or messages.
 
 ## Created entities
+
+### Blueprint: Google Drive notifications
+
+A blueprint is available to send smartphone notifications when:
+
+- Google Drive is disconnected or its authorisation expires;
+- the nightly backup fails;
+- the nightly backup has not completed by the expected time.
+
+[![Import the Gestione C/C - Google Drive notifications blueprint](https://my.home-assistant.io/badges/blueprint.svg)](https://my.home-assistant.io/redirect/blueprint/?blueprint_url=https%3A%2F%2Fgithub.com%2Fstefanodr%2Fgestione-cc-integration%2Fblob%2Fmain%2Fblueprints%2Fautomation%2Fgestione_cc%2Fnotifiche_google_drive.yaml)
+
+**Setup**
+
+1. Click **Import the blueprint** above and confirm the import in Home Assistant.
+2. Open **Settings → Automations & scenes → Blueprints**, select **Gestione C/C - Notifiche Google Drive**, and create an automation.
+3. Select the integration's three binary sensors: Google Drive connected, nightly backup failed and nightly backup overdue.
+4. Select the smartphone running the Home Assistant Companion app and save.
+
+Sensors are selected in the UI, so their entity IDs do not need to match the integration's suggested IDs. For example, Home Assistant may assign customised IDs with a `space_` prefix.
+
+The backup-failed notification is sent only if the Google Drive connected sensor is still on when the event occurs. Separate notification tags are used so a new notification of the same type updates the existing one instead of creating duplicates.
+
 
 All entities belong to one **Gestione C/C** device. Suggested entity IDs are listed above in the Italian section; they include 21 sensors, five binary sensors and three maintenance buttons. Home Assistant may adjust entity IDs if conflicts already exist.
 
