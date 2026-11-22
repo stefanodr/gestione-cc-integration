@@ -108,7 +108,7 @@ Il flusso verifica che l'URL sia HTTPS e locale, che il certificato sia leggibil
 - il backup notturno non riesce;
 - il backup notturno non risulta completato entro l'orario previsto.
 
-[![Importa il blueprint Gestione C/C - Notifiche Google Drive](https://my.home-assistant.io/badges/blueprint.svg)](https://my.home-assistant.io/redirect/blueprint/?blueprint_url=https%3A%2F%2Fgithub.com%2Fstefanodr%2Fgestione-cc-integration%2Fblob%2Fmain%2Fblueprints%2Fautomation%2Fgestione_cc%2Fnotifiche_google_drive.yaml)
+[![Importa il blueprint Gestione C/C - Notifiche Google Drive](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fstefanodr%2Fgestione-cc-integration%2Fblob%2Fmain%2Fblueprints%2Fautomation%2Fgestione_cc%2Fnotifiche_google_drive.yaml)
 
 **Configurazione**
 
@@ -289,7 +289,7 @@ A blueprint is available to send smartphone notifications when:
 - the nightly backup fails;
 - the nightly backup has not completed by the expected time.
 
-[![Import the Gestione C/C - Google Drive notifications blueprint](https://my.home-assistant.io/badges/blueprint.svg)](https://my.home-assistant.io/redirect/blueprint/?blueprint_url=https%3A%2F%2Fgithub.com%2Fstefanodr%2Fgestione-cc-integration%2Fblob%2Fmain%2Fblueprints%2Fautomation%2Fgestione_cc%2Fnotifiche_google_drive.yaml)
+[![Import the Gestione C/C - Google Drive notifications blueprint](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fstefanodr%2Fgestione-cc-integration%2Fblob%2Fmain%2Fblueprints%2Fautomation%2Fgestione_cc%2Fnotifiche_google_drive.yaml)
 
 **Setup**
 
