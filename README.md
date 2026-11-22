@@ -55,14 +55,21 @@ L'integrazione è progettata per connessioni HTTPS verso IP privati o nomi host 
 
 ## Installazione con HACS
 
+**Repository personalizzato HACS**
+
+`https://github.com/stefanodr/gestione-cc-integration`
+
+Categoria da selezionare: **Integrazione**.
+
+[![Apri Home Assistant e aggiungi Gestione C/C a HACS](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=stefanodr&repository=gestione-cc-integration&category=integration)
+
+In alternativa, per l'aggiunta manuale:
+
 1. Aprire **HACS → Integrazioni**.
 2. Aprire il menu in alto a destra e selezionare **Repository personalizzati**.
-3. Inserire `https://github.com/stefanodr/gestione-cc-integration`.
-4. Selezionare la categoria **Integrazione** e premere **Aggiungi**.
-5. Cercare **Gestione C/C**, installare l'integrazione e riavviare Home Assistant.
-6. Aggiungere l'integrazione da **Impostazioni → Dispositivi e servizi → Aggiungi integrazione → Gestione C/C**.
-
-[Apri il repository in HACS tramite My Home Assistant](https://my.home-assistant.io/redirect/hacs_repository/?owner=stefanodr&repository=gestione-cc-integration&category=integration)
+3. Incollare il percorso sopra, scegliere **Integrazione** e premere **Aggiungi**.
+4. Cercare **Gestione C/C**, installare e riavviare Home Assistant.
+5. Aggiungere l'integrazione da **Impostazioni → Dispositivi e servizi → Aggiungi integrazione → Gestione C/C**.
 
 ### Installazione manuale
 
@@ -195,14 +202,21 @@ The integration is designed for HTTPS connections to private IP addresses or loc
 
 ## Installation with HACS
 
+**HACS custom repository**
+
+`https://github.com/stefanodr/gestione-cc-integration`
+
+Select category: **Integration**.
+
+[![Open Home Assistant and add Gestione C/C to HACS](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=stefanodr&repository=gestione-cc-integration&category=integration)
+
+Alternatively, add it manually:
+
 1. Open **HACS → Integrations**.
 2. Open the top-right menu and select **Custom repositories**.
-3. Add `https://github.com/stefanodr/gestione-cc-integration`.
-4. Select **Integration** as the category and click **Add**.
-5. Find **Gestione C/C**, install it and restart Home Assistant.
-6. Add the integration from **Settings → Devices & services → Add integration → Gestione C/C**.
-
-[Open this repository in HACS using My Home Assistant](https://my.home-assistant.io/redirect/hacs_repository/?owner=stefanodr&repository=gestione-cc-integration&category=integration)
+3. Paste the repository path above, select **Integration**, and click **Add**.
+4. Find **Gestione C/C**, install it and restart Home Assistant.
+5. Add the integration from **Settings → Devices & services → Add integration → Gestione C/C**.
 
 ### Manual installation
 
