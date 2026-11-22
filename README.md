@@ -185,6 +185,7 @@ L'intervallo di aggiornamento generale è 60 secondi; i dati meno dinamici sono 
 | Errore TLS | Verificare che il certificato CA corrisponda all'App e che l'URL usato sia incluso nei nomi/IP coperti dal certificato. |
 | Token non valido o revocato | Generare/verificare il token nell'App e riconfigurare l'integrazione. |
 | Sensori non disponibili | Controllare i log di Home Assistant e lo stato dell'API tecnica dell'App. |
+| Icona non visibile nella pagina dell'integrazione | Verificare che sia installata la revisione più recente del componente e riavviare Home Assistant. L'icona è inclusa in `custom_components/gestione_cc/brand/icon.png` ed è supportata da Home Assistant 2026.3 o successivo. |
 | Pulsante non avvia l'operazione | Verificare i log dell'App, lo stato del relativo servizio e l'eventuale operazione già in esecuzione. |
 
 ## Aggiornamento e migrazione
@@ -303,6 +304,7 @@ The general coordinator interval is 60 seconds. Less dynamic data use longer int
 | TLS error | Check that the CA certificate belongs to the App and that the URL hostname/IP is covered by the certificate. |
 | Invalid or revoked token | Verify or generate the token in the App and reconfigure the integration. |
 | Entities unavailable | Check Home Assistant logs and the App's technical API status. |
+| Integration icon is missing | Make sure the latest component revision is installed and restart Home Assistant. The icon is bundled at `custom_components/gestione_cc/brand/icon.png` and is supported by Home Assistant 2026.3 or later. |
 | Button does not start an operation | Check App logs, service status and whether another operation is already running. |
 
 ## Updates and migration
