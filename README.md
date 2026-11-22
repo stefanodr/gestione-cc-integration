@@ -82,10 +82,21 @@ Durante il flusso di configurazione inserire:
 | Campo | Descrizione |
 |---|---|
 | URL locale Gestione C/C | Indirizzo HTTPS locale dell'App, senza percorso aggiuntivo, ad esempio `https://192.168.1.27:8443`. |
-| Token integrazione | Token dedicato generato in Gestione C/C → Impostazioni → Integrazione Home Assistant. Il campo è mascherato. |
+| Token integrazione | Token dedicato generato nelle **Impostazioni dell'app Gestione C/C** → riquadro **Integrazione Home Assistant**. Non si genera nella configurazione dell'add-on né nella schermata di configurazione dell'integrazione Home Assistant. |
 | Percorso certificato CA | Percorso del certificato CA privata accessibile da Home Assistant Core, ad esempio `/ssl/gestione-cc-ca.crt`. |
 
 Il flusso verifica che l'URL sia HTTPS e locale, che il certificato sia leggibile e che l'endpoint tecnico risponda con autenticazione valida. La verifica TLS non viene disabilitata.
+
+### Come generare e inserire il token
+
+1. Aprire l'applicazione **Gestione C/C** nel browser (non la pagina di Home Assistant). Nel proprio impianto, l'indirizzo locale è ad esempio `https://192.168.1.27:8443`.
+2. Aprire **Impostazioni** all'interno dell'app Gestione C/C.
+3. Individuare il riquadro **Integrazione Home Assistant**.
+4. Premere **Genera / rinnova token**.
+5. Copiare subito il token mostrato e conservarlo temporaneamente in un luogo sicuro: per sicurezza viene mostrato una sola volta e l'app ne conserva solo l'impronta crittografica, non il valore originale.
+6. Tornare alla procedura **Impostazioni Home Assistant → Dispositivi e servizi → Aggiungi integrazione → Gestione C/C** e incollare il token nel campo **Token integrazione**, insieme all'URL locale e al percorso del certificato CA.
+
+**Attenzione:** non premere prima **Revoca token**. Il pulsante **Genera / rinnova token** crea un nuovo token e invalida automaticamente quello precedente. Se il token viene perso o non viene copiato, premere nuovamente **Genera / rinnova token** e copiare il nuovo valore: il precedente non può essere recuperato. Non condividere il token e non inserirlo in segnalazioni, screenshot o messaggi.
 
 ## Entità create
 
@@ -229,10 +240,21 @@ Enter the following values in the configuration flow:
 | Field | Description |
 |---|---|
 | Local Gestione C/C URL | Local HTTPS address of the App, without an additional path, e.g. `https://192.168.1.27:8443`. |
-| Integration token | Dedicated token generated in Gestione C/C → Settings → Home Assistant Integration. The field is masked. |
+| Integration token | Dedicated token generated in the **Gestione C/C application settings** → **Home Assistant Integration** panel. It is not generated in the add-on settings or in the Home Assistant integration configuration screen. |
 | CA certificate path | Path to the private CA certificate readable by Home Assistant Core, e.g. `/ssl/gestione-cc-ca.crt`. |
 
 The configuration flow checks that the URL is local and uses HTTPS, that the certificate is readable, and that the authenticated technical health endpoint responds correctly. TLS verification is never disabled.
+
+### How to generate and enter the token
+
+1. Open the **Gestione C/C application** in a browser (not the Home Assistant page). Your local address may look like `https://192.168.1.27:8443`.
+2. Open **Settings** inside the Gestione C/C application.
+3. Find the **Home Assistant Integration** panel.
+4. Click **Generate / renew token**.
+5. Copy the token immediately and keep it temporarily in a secure place. For security, it is displayed only once; the App stores only its cryptographic hash, not the original value.
+6. Return to **Home Assistant Settings → Devices & services → Add integration → Gestione C/C** and paste the token into the **Integration token** field, together with the local URL and CA certificate path.
+
+**Important:** do not click **Revoke token** first. **Generate / renew token** creates a new token and automatically invalidates the previous one. If the token is lost or was not copied, click **Generate / renew token** again and copy the newly displayed value; the previous token cannot be recovered. Never share the token or include it in issue reports, screenshots or messages.
 
 ## Created entities
 
