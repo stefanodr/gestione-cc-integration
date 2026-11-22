@@ -1,0 +1,97 @@
+blueprint:
+  name: Gestione C/C - Notifiche Google Drive
+  description: >
+    Invia notifiche allo smartphone quando Google Drive si scollega,
+    il backup notturno non riesce oppure non risulta completato entro
+    l'orario previsto. Seleziona i tre sensori dell'integrazione e il
+    dispositivo mobile_app che deve ricevere le notifiche.
+  domain: automation
+  input:
+    google_drive_connected:
+      name: Sensore Google Drive collegato
+      description: Sensore binario che indica se Google Drive è collegato.
+      selector:
+        entity:
+          domain: binary_sensor
+    backup_failed:
+      name: Sensore backup notturno non riuscito
+      description: Diventa attivo quando il backup notturno fallisce.
+      selector:
+        entity:
+          domain: binary_sensor
+    backup_overdue:
+      name: Sensore backup notturno mancante
+      description: Diventa attivo quando il backup non risulta completato in orario.
+      selector:
+        entity:
+          domain: binary_sensor
+    notify_device:
+      name: Smartphone destinatario
+      description: Dispositivo Home Assistant Companion con integrazione mobile_app.
+      selector:
+        device:
+          integration: mobile_app
+
+trigger:
+  - platform: state
+    entity_id: !input google_drive_connected
+    to: "off"
+    id: drive_disconnected
+  - platform: state
+    entity_id: !input backup_failed
+    to: "on"
+    id: backup_failed
+  - platform: state
+    entity_id: !input backup_overdue
+    to: "on"
+    id: backup_overdue
+
+action:
+  - choose:
+      - conditions:
+          - condition: trigger
+            id: drive_disconnected
+        sequence:
+          - device_id: !input notify_device
+            domain: mobile_app
+            type: notify
+            title: "☁️ Gestione C/C - Google Drive"
+            message: >-
+              ⚠️ Google Drive risulta scollegato o l'autorizzazione è scaduta.
+              Ricollega Google Drive nelle impostazioni di Gestione C/C.
+            data:
+              tag: gestione_cc_drive
+
+      - conditions:
+          - condition: trigger
+            id: backup_failed
+          - condition: state
+            entity_id: !input google_drive_connected
+            state: "on"
+        sequence:
+          - device_id: !input notify_device
+            domain: mobile_app
+            type: notify
+            title: "⚠️ Gestione C/C - Backup non riuscito"
+            message: >-
+              Il backup notturno su Google Drive non è riuscito. Verifica la
+              connessione e lo spazio disponibile.
+            data:
+              tag: gestione_cc_backup
+
+      - conditions:
+          - condition: trigger
+            id: backup_overdue
+        sequence:
+          - device_id: !input notify_device
+            domain: mobile_app
+            type: notify
+            title: "⏰ Gestione C/C - Backup mancante"
+            message: >-
+              Il backup notturno su Google Drive non risulta completato entro
+              l'orario previsto. Controlla Gestione C/C.
+            data:
+              tag: gestione_cc_backup
+
+mode: queued
+max: 5
